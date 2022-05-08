@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Root from './routes/root';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+
+const PortfolioTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#FFFFFF'
+    },
+    background: {
+      paper: "rgba(0,0,0,0)",
+      default: "#000000"
+    },
+    text: {
+      primary: "#FFFFFF"
+    }
+  },
+  typography: {
+    button: {
+      textTransform: 'none'
+    }
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={PortfolioTheme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Root />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
