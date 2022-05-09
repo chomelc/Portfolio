@@ -7,17 +7,21 @@ import { CssBaseline } from '@mui/material';
 const PortfolioTheme = createTheme({
   palette: {
     primary: {
-      main: '#FFFFFF'
+      main: '#D0D6C2'
+    },
+    secondary: {
+      main: '#FDB833'
     },
     background: {
       paper: "rgba(0,0,0,0)",
       default: "#000000"
     },
     text: {
-      primary: "#FFFFFF"
+      primary: "#D0D6C2"
     }
   },
   typography: {
+    fontFamily: ["Roboto", "Nunito", "sans-serif"].join(","),
     button: {
       textTransform: 'none'
     }

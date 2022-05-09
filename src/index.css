@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-link:hover {
+  color: #FDB833;
+  text-decoration-color: #FDB833;
+}
+
+.profile-picture {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-picture::before {
+  content: " ";
+  height: 256px;
+  width: 256px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: #FDB833;
+}
+
+.profile-picture img {
+  opacity: 0.75;
+}
+
+.profile-picture img:hover {
+  opacity: 1;
+}
+
+.profile-picture::after {
+  content: " ";
+  height: 256px;
+  width: 256px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  top: 15px;
+  right: -15px;
+  bottom: -15px;
+  left: 15px;
+  position: absolute;
+  z-index: -1;
+  border: 2px solid #FDB833;
+  transition-duration: 100ms;
+} 
+
+.profile-picture:hover::after {
+  content: " ";
+  height: 256px;
+  width: 256px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  top: 10px;
+  right: -10px;
+  bottom: -10px;
+  left: 10px;
+  position: absolute;
+  z-index: -1;
+  border: 2px solid #FDB833;
+}
