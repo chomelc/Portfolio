@@ -60,19 +60,19 @@ export default function HeaderBar() {
                 <Stack direction="row" spacing={5} alignItems="center">
                     <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                         01.
-                        <Link className="custom-link" underline="none">
+                        <Link className="custom-link" underline="none" onClick={() => { document.querySelector("#about")?.scrollIntoView() }}>
                             About
                         </Link>
                     </Typography>
                     <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                         02.
-                        <Link className="custom-link" underline="none">
+                        <Link className="custom-link" underline="none" onClick={() => { document.querySelector("#experience")?.scrollIntoView() }}>
                             Experience
                         </Link>
                     </Typography>
                     <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                         03.
-                        <Link className="custom-link" underline="none">
+                        <Link className="custom-link" underline="none" onClick={() => { document.querySelector("#contact")?.scrollIntoView() }}>
                             Contact
                         </Link>
                     </Typography>

@@ -1,7 +1,9 @@
-import { Box, Chip, List, ListItem, ListItemIcon, ListItemText, Stack, Tab, Tabs, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import CardTitle from "../CardTitle";
 import ApprenticeshipExperience from "./ApprenticeshipExperience";
+import ExperienceHorizontalTabs from "./ExperienceHorizontalTabs";
+import ExperienceVerticalTabs from "./ExperienceVerticalTabs";
 import InternshipExperience from "./InternshipExperience";
 
 interface TabPanelProps {
@@ -30,15 +32,62 @@ function TabPanel(props: TabPanelProps) {
     );
 }
 
-function a11yProps(index: number) {
-    return {
-        id: `vertical-tab-${index}`,
-        'aria-controls': `vertical-tabpanel-${index}`,
-    };
-}
-
-
 export default function ExperienceCardContent() {
+    const [state, setState] = useState({
+        mobileView: false,
+        drawerOpen: false,
+    });
+
+    const { mobileView } = state;
+
+    useEffect(() => {
+        const setResponsiveness = () => {
+            return window.innerWidth < 900
+                ? setState((prevState) => ({ ...prevState, mobileView: true }))
+                : setState((prevState) => ({ ...prevState, mobileView: false }));
+        };
+
+        setResponsiveness();
+
+        window.addEventListener("resize", () => setResponsiveness());
+
+        return () => {
+            window.removeEventListener("resize", () => setResponsiveness());
+        };
+    }, []);
+
+    const displayMobile = () => {
+        return (
+            <>
+                {/* TODO */}
+                Mobile Presentation of Work Experience
+                {/* <ExperienceHorizontalTabs value={value} handleChange={handleChange}/>
+                <TabPanel value={value} index={0}>
+                    <ApprenticeshipExperience />
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                    <InternshipExperience/>
+                </TabPanel> */}
+            </>
+        );
+    };
+
+    const displayDesktop = () => {
+        return (
+            <Box
+                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex' }}
+            >
+                <ExperienceVerticalTabs value={value} handleChange={handleChange} />
+                <TabPanel value={value} index={0}>
+                    <ApprenticeshipExperience />
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                    <InternshipExperience />
+                </TabPanel>
+            </Box>
+        );
+    };
+
     const [value, setValue] = useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -47,56 +96,8 @@ export default function ExperienceCardContent() {
 
     return (
         <>
-            <CardTitle number="02." title="Work experience" />
-            <Box
-                mt={1.5}
-                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex' }}
-            >
-                <Tabs
-                    orientation="vertical"
-                    variant="scrollable"
-                    value={value}
-                    onChange={handleChange}
-                    aria-label="Vertical tabs example"
-                    sx={{
-                        minWidth: 200,
-                        height:800,
-                        '.MuiTabs-indicator': {
-                            left: 0,
-                        },
-                        '.Mui-selected': {
-                            backgroundColor: "rgba(253, 184, 51,0.2)"
-                        }
-                    }}
-                    textColor="secondary"
-                    indicatorColor="secondary"
-                >
-                    <Tab
-                        sx={{
-                            fontFamily: 'Monospace',
-                            color: "#D0D6C2",
-                            alignItems: "flex-end"
-                        }}
-                        label="SAP - Apprentice"
-                        {...a11yProps(0)}
-                    />
-                    <Tab
-                        sx={{
-                            fontFamily: 'Monospace',
-                            color: "#D0D6C2",
-                            alignItems: "flex-end"
-                        }}
-                        label="SAP - Intern"
-                        {...a11yProps(1)}
-                    />
-                </Tabs>
-                <TabPanel value={value} index={0}>
-                    <ApprenticeshipExperience />
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    <InternshipExperience />
-                </TabPanel>
-            </Box>
+            <CardTitle number="02." title="Where I've Worked" />
+            {mobileView ? displayMobile() : displayDesktop()}
         </>
     );
 }

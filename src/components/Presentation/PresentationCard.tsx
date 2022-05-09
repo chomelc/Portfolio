@@ -1,9 +1,9 @@
-import { Card, CardContent } from '@mui/material';
+import { Box, Card, CardContent, Grid } from '@mui/material';
 import PresentationCardText from './PresentationCardText';
 
 export default function PresentationCard() {
     return (
-        <Card sx={{ minWidth: 275, maxWidth: 900, boxShadow: "none" }}>
+        <Card sx={{ width: 900, maxWidth: "100vw", boxShadow: "none" }}>
             <CardContent>
                 <PresentationCardText />
             </CardContent>

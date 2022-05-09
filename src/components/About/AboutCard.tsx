@@ -3,7 +3,7 @@ import AboutCardContent from "./AboutCardContent";
 
 export default function AboutCard() {
     return (
-        <Card sx={{ minWidth: 275, maxWidth: 900, boxShadow: "none" }}>
+        <Card sx={{ width: 900, maxWidth: "100vw", boxShadow: "none" }}>
             <CardContent>
                 <AboutCardContent />
             </CardContent>

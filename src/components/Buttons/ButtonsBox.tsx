@@ -29,13 +29,11 @@ export default function ButtonsBox() {
     }, []);
 
     return (
-        <Box sx={{ transform: 'translateZ(0px)', flexGrow: 1 }}>
-            <Stack direction={mobileView ? "row" : "column"} spacing={1} sx={{ position: 'absolute', bottom: 16, right: 16 }}>
-                <MailButton />
-                <LinkedInButton />
-                <GitHubButton />
-                <PhoneButton />
-            </Stack>
-        </Box>
+        <Stack direction="row" spacing={1}>
+            <MailButton />
+            <LinkedInButton />
+            <GitHubButton />
+            <PhoneButton />
+        </Stack>
     );
 }

@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@mui/material";
-import ExperienceCardContent from "./ExperienceCardContent";
+import ContactCardContent from "./ContactCardContent";
 
-export default function ExperienceCard() {
+export default function ContactCard() {
     return (
         <Card sx={{ width: 900, maxWidth: "100vw", boxShadow: "none" }}>
             <CardContent>
-                <ExperienceCardContent />
+                <ContactCardContent />
             </CardContent>
         </Card>
     );

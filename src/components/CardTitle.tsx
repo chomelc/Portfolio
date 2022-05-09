@@ -7,14 +7,14 @@ interface CardTitleProps {
 
 export default function CardTitle(props : CardTitleProps) {
     return (
-        <Stack direction="row" spacing={2} alignItems="center">
+        <Stack mb={1.5} direction="row" spacing={2} alignItems="center">
             <Typography variant="h4" color="secondary" sx={{ fontFamily: 'Monospace' }}>
                 {props.number}
             </Typography>
             <Typography variant="h4" color="primary" sx={{ fontFamily: 'Nunito' }}>
                 {props.title}
             </Typography>
-            <Divider style={{ height: "1px", width: "50%", backgroundColor: "#D0D6C2" }} />
+            {/* <Divider style={{ height: "1px", width: "5vw", backgroundColor: "#D0D6C2" }} /> */}
         </Stack>
     );
 }

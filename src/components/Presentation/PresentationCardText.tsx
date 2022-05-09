@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import ButtonsBox from "../Buttons/ButtonsBox";
 
 export default function PresentationCardText() {
     return (
@@ -17,6 +18,7 @@ export default function PresentationCardText() {
                 I am currently looking for a <span style={{color:"#FDB833"}}>software engineer position</span>, starting in
                 september 2022, in the Paris region.
             </Typography>
+            <ButtonsBox/>
         </>
     );
 }

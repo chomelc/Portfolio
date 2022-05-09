@@ -1,4 +1,4 @@
-import { Typography, Stack, Chip } from "@mui/material";
+import { Typography, Stack, Chip, Grid } from "@mui/material";
 
 export default function Technologies() {
     return (
@@ -6,14 +6,26 @@ export default function Technologies() {
             <Typography variant="h6" sx={{ mb: 1.5 }}>
                 Here are a few technologies I’ve been working with recently:
             </Typography>
-            <Stack direction="row" spacing={1}>
-                <Chip label="Java" color="primary" variant="outlined" />
-                <Chip label="C#" color="primary" variant="outlined" />
-                <Chip label="Python" color="primary" variant="outlined" />
-                <Chip label="React" color="primary" variant="outlined" />
-                <Chip label="Javascript" color="primary" variant="outlined" />
-                <Chip label="TypeScript" color="primary" variant="outlined" />
-            </Stack>
+            <Grid container direction="row" spacing={1} alignItems="center">
+                <Grid item xs={4}>
+                    <Chip label="Java" color="primary" variant="outlined" />
+                </Grid>
+                <Grid item xs={4}>
+                    <Chip label="C#" color="primary" variant="outlined" />
+                </Grid>
+                <Grid item xs={4}>
+                    <Chip label="Python" color="primary" variant="outlined" />
+                </Grid>
+                <Grid item xs={4}>
+                    <Chip label="React" color="primary" variant="outlined" />
+                </Grid>
+                <Grid item xs={4}>
+                    <Chip label="Javascript" color="primary" variant="outlined" />
+                </Grid>
+                <Grid item xs={4}>
+                    <Chip label="TypeScript" color="primary" variant="outlined" />
+                </Grid>
+            </Grid>
         </>
     );
 }
