@@ -3,7 +3,7 @@ import PresentationCardText from './PresentationCardText';
 
 export default function PresentationCard() {
     return (
-        <Card sx={{ minWidth: 275, maxWidth: 675, boxShadow: "none" }}>
+        <Card sx={{ minWidth: 275, maxWidth: 900, boxShadow: "none" }}>
             <CardContent>
                 <PresentationCardText />
             </CardContent>

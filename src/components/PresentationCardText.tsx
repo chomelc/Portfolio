@@ -4,7 +4,7 @@ import ButtonsBox from "./ButtonsBox";
 export default function PresentationCardText() {
     return (
         <>
-            <Typography variant="subtitle1" color="secondary" sx={{ fontFamily: 'Monospace' }}>
+            <Typography variant="h6" color="secondary" sx={{ fontFamily: 'Monospace' }}>
                 Hi, my name is
             </Typography>
             <Typography variant="h2" sx={{ fontFamily: 'Nunito' }}>
@@ -15,7 +15,7 @@ export default function PresentationCardText() {
             </Typography>
             <Typography variant="h6" sx={{ mb: 1.5 }}>
                 Soon to be graduate software engineer at University of Technology of Compiègne.
-                I am currently looking for a software engineer position, starting in
+                I am currently looking for a <span style={{color:"#FDB833"}}>software engineer position</span>, starting in
                 september 2022, in the Paris region.
             </Typography>
         </>
