@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import Root from './routes/root';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
@@ -28,11 +28,11 @@ function App() {
   return (
     <ThemeProvider theme={PortfolioTheme}>
       <CssBaseline />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Root />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
