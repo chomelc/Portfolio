@@ -1,11 +1,11 @@
 import { Box, Collapse, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 import Background from '../assets/img/background.png';
-import AboutCard from './AboutCard';
-import ButtonsBox from './ButtonsBox';
-import ExperienceCard from './ExperienceCard';
+import AboutCard from './About/AboutCard';
+import ButtonsBox from './Buttons/ButtonsBox';
+import ExperienceCard from './Experience/ExperienceCard';
 import HeaderBar from './HeaderBar';
-import PresentationCard from './PresentationCard';
+import PresentationCard from './Presentation/PresentationCard';
 
 export default function Home() {
     const [checked, setChecked] = useState(false);

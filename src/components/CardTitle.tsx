@@ -5,7 +5,7 @@ interface CardTitleProps {
     title: string
 }
 
-export default function AboutCardTitle(props : CardTitleProps) {
+export default function CardTitle(props : CardTitleProps) {
     return (
         <Stack direction="row" spacing={2} alignItems="center">
             <Typography variant="h4" color="secondary" sx={{ fontFamily: 'Monospace' }}>

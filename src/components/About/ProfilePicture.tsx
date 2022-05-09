@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import PP from '../assets/img/avatar.jpg';
+import PP from '../../assets/img/avatar.jpg';
 
 export default function ProfilePicture() {
     return (

@@ -9,7 +9,7 @@ export default function ResumeButton() {
                 variant="outlined"
                 color="secondary"
                 size="large"
-                href={require("../assets/Resume.pdf")}
+                href={require("../../assets/Resume.pdf")}
                 target="_blank"
                 startIcon={<DownloadIcon />}>
                 Resume

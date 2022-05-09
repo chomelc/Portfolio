@@ -1,5 +1,4 @@
 import { Typography } from "@mui/material";
-import ButtonsBox from "./ButtonsBox";
 
 export default function PresentationCardText() {
     return (

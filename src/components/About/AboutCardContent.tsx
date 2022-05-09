@@ -1,8 +1,8 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import AboutCardText from "./AboutCardText";
-import CardTitle from "./CardTitle";
-import ProfilePicture from "./ProfilePicture";
+import CardTitle from "../CardTitle";
 import Technologies from "./Technologies";
+import ProfilePicture from "./ProfilePicture";
 
 export default function AboutCardContent() {
     return (

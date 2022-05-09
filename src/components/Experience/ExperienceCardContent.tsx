@@ -1,6 +1,6 @@
 import { Box, Chip, List, ListItem, ListItemIcon, ListItemText, Stack, Tab, Tabs, Typography } from "@mui/material";
 import { useState } from "react";
-import CardTitle from "./CardTitle";
+import CardTitle from "../CardTitle";
 import ApprenticeshipExperience from "./ApprenticeshipExperience";
 import InternshipExperience from "./InternshipExperience";
 
@@ -60,6 +60,7 @@ export default function ExperienceCardContent() {
                     aria-label="Vertical tabs example"
                     sx={{
                         minWidth: 200,
+                        height:800,
                         '.MuiTabs-indicator': {
                             left: 0,
                         },

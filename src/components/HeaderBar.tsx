@@ -2,7 +2,7 @@ import { Box, Toolbar, Button, AppBar, IconButton, Typography, Link, Stack, Draw
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import ResumeButton from "./ResumeButton";
+import ResumeButton from "./Buttons/ResumeButton";
 import { useEffect, useState } from "react";
 
 interface HideOnScrollProps {
