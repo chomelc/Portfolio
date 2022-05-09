@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Background from '../assets/img/background.png';
 import AboutCard from './AboutCard';
 import ButtonsBox from './ButtonsBox';
+import ExperienceCard from './ExperienceCard';
 import HeaderBar from './HeaderBar';
 import PresentationCard from './PresentationCard';
 
@@ -34,6 +35,9 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={12}>
                     <AboutCard />
+                </Grid>
+                <Grid item xs={12}>
+                    <ExperienceCard />
                 </Grid>
             </Grid>
             <ButtonsBox />
