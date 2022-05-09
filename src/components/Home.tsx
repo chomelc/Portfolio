@@ -23,7 +23,8 @@ export default function Home() {
                 backgroundImage: `url(${Background})`,
                 backgroundSize: "cover",
                 backgroundAttachment: "scroll"
-            }}>
+            }}
+            justifyContent="center">
             <Stack spacing={2} direction="column">
                 <HeaderBar />
                 {/* <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}> */}
