@@ -1,6 +1,7 @@
 import { Box, IconButton, Stack } from '@mui/material';
 import { useEffect, useState } from 'react';
 import GitHubButton from './GitHubButton';
+import HackerRankButton from './HackerRankButton';
 import LinkedInButton from './LinkedInButton';
 import MailButton from './MailButton';
 import PhoneButton from './PhoneButton';
@@ -33,6 +34,7 @@ export default function ButtonsBox() {
             <MailButton />
             <LinkedInButton />
             <GitHubButton />
+            <HackerRankButton />
             <PhoneButton />
         </Stack>
     );

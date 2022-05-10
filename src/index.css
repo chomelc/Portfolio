@@ -12,6 +12,14 @@ code {
     monospace;
 }
 
+.hackerrank-logo {
+  filter: invert(98%) sepia(5%) saturate(781%) hue-rotate(21deg) brightness(87%) contrast(92%);
+}
+
+.custom-link:hover .hackerrank-logo{
+  filter: invert(77%) sepia(86%) saturate(1158%) hue-rotate(331deg) brightness(102%) contrast(98%);
+}
+
 .custom-link:hover {
   color: #FDB833;
   text-decoration-color: #FDB833;
