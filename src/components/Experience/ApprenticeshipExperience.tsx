@@ -33,6 +33,7 @@ export default function ApprenticeshipExperience() {
                             <Chip label="Javascript" color="primary" variant="outlined" />
                             <Chip label="Typescript" color="primary" variant="outlined" />
                             <Chip label="React" color="primary" variant="outlined" />
+                            <Chip label="SAP UI5" color="primary" variant="outlined" />
                         </Stack>
                     </Stack>
                 </ListItem>
