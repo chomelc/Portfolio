@@ -7,11 +7,13 @@ import CustomCard from './CustomCard';
 import ExperienceCardContent from './Experience/ExperienceCardContent';
 import HeaderBar from './HeaderBar';
 import PresentationCardContent from './Presentation/PresentationCardContent';
+import WorkCardContent from './Work/WorkCardContent';
 
 export enum HomeView {
     PRESENTATION,
     ABOUT,
     EXPERIENCE,
+    WORK,
     CONTACT
 }
 
@@ -23,6 +25,8 @@ function selectView(view: HomeView) {
             return (<AboutCardContent />);
         case HomeView.EXPERIENCE:
             return (<ExperienceCardContent />);
+        case HomeView.WORK:
+            return (<WorkCardContent />);
         case HomeView.CONTACT:
             return (<ContactCardContent />);
     }

@@ -8,8 +8,7 @@ import ButtonsBox from "../Buttons/ButtonsBox";
 
 export default function AboutCardContent() {
     const [state, setState] = useState({
-        mobileView: false,
-        drawerOpen: false,
+        mobileView: false
     });
 
     const { mobileView } = state;
@@ -34,7 +33,7 @@ export default function AboutCardContent() {
 
     return (
         <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
-            <CardTitle number="03." title="Get In Touch" />
+            <CardTitle number="04." title="Get In Touch" />
             <Stack direction={mobileView ? "column" : "row"} spacing={2} alignItems="center" justifyContent="flex-start">
                 <LinkedInCard theme="dark" />
                 <Stack direction="column" spacing={2} alignItems="flex-start">

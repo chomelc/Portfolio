@@ -77,6 +77,12 @@ export default function HeaderBar(props: HeaderBarProps) {
                     </Typography>
                     <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                         03.
+                        <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.WORK)}>
+                            Work
+                        </Link>
+                    </Typography>
+                    <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
+                        04.
                         <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.CONTACT)}>
                             Contact
                         </Link>
@@ -158,6 +164,12 @@ export default function HeaderBar(props: HeaderBarProps) {
                 </Typography>
                 <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                     03.
+                    <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.WORK)}>
+                        Work
+                    </Link>
+                </Typography>
+                <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
+                    04.
                     <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.CONTACT)}>
                         Contact
                     </Link>
