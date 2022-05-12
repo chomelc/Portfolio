@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Collapse, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import CardTitle from "../CardTitle";
 import ApprenticeshipExperience from "./ApprenticeshipExperience";
@@ -39,8 +39,10 @@ export default function ExperienceCardContent() {
     });
 
     const { mobileView } = state;
+    const [checked, setChecked] = useState(false);
 
     useEffect(() => {
+        setChecked(true);
         const setResponsiveness = () => {
             return window.innerWidth < 900
                 ? setState((prevState) => ({ ...prevState, mobileView: true }))
@@ -95,9 +97,9 @@ export default function ExperienceCardContent() {
     };
 
     return (
-        <>
+        <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
             <CardTitle number="02." title="Where I've Worked" />
             {mobileView ? displayMobile() : displayDesktop()}
-        </>
+        </Collapse>
     );
 }

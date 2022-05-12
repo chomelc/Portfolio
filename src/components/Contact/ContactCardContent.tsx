@@ -1,9 +1,10 @@
-import { Button, Stack, Tooltip } from "@mui/material";
+import { Button, Collapse, Stack, Tooltip } from "@mui/material";
 import CardTitle from "../CardTitle";
 import LinkedInCard from "../LinkedInCard";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { useEffect, useState } from "react";
+import ButtonsBox from "../Buttons/ButtonsBox";
 
 export default function AboutCardContent() {
     const [state, setState] = useState({
@@ -12,8 +13,10 @@ export default function AboutCardContent() {
     });
 
     const { mobileView } = state;
+    const [checked, setChecked] = useState(false);
 
     useEffect(() => {
+        setChecked(true);
         const setResponsiveness = () => {
             return window.innerWidth < 900
                 ? setState((prevState) => ({ ...prevState, mobileView: true }))
@@ -28,9 +31,9 @@ export default function AboutCardContent() {
             window.removeEventListener("resize", () => setResponsiveness());
         };
     }, []);
-    
+
     return (
-        <>
+        <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
             <CardTitle number="03." title="Get In Touch" />
             <Stack direction={mobileView ? "column" : "row"} spacing={2} alignItems="center" justifyContent="flex-start">
                 <LinkedInCard theme="dark" />
@@ -48,19 +51,20 @@ export default function AboutCardContent() {
                         </Button>
                     </Tooltip>
                     <Tooltip title="Call phone number">
-                    <Button
-                        size="large"
-                        startIcon={<LocalPhoneIcon color="secondary" />}
-                        onClick={(e) => {
-                            window.location.href = "tel:(+33)695643477";
-                            e.preventDefault();
-                        }}
-                    >
-                        (+33)695643477
-                    </Button>
+                        <Button
+                            size="large"
+                            startIcon={<LocalPhoneIcon color="secondary" />}
+                            onClick={(e) => {
+                                window.location.href = "tel:(+33)695643477";
+                                e.preventDefault();
+                            }}
+                        >
+                            (+33)695643477
+                        </Button>
                     </Tooltip>
+                    <ButtonsBox />
                 </Stack>
             </Stack>
-        </>
+        </Collapse>
     );
 }

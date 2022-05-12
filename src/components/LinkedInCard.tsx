@@ -10,10 +10,10 @@ export default function LinkedInCard(props : any) {
         script.async = true;
         script.defer = true;
     
-        document.body.appendChild(script);
+        document.head.appendChild(script);
     
         return () => {
-          document.body.removeChild(script);
+          document.head.removeChild(script);
         };
       }, []);   
     return (

@@ -23,6 +23,7 @@ code {
 .custom-link:hover {
   color: #FDB833;
   text-decoration-color: #FDB833;
+  cursor: pointer;
 }
 
 .profile-picture {

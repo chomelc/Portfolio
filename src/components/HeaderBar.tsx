@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ResumeButton from "./Buttons/ResumeButton";
 import { useEffect, useState } from "react";
+import { HomeView } from "./Home";
 
 interface HideOnScrollProps {
     children: React.ReactElement;
@@ -18,7 +19,11 @@ function HideOnScroll({ children }: HideOnScrollProps) {
     );
 }
 
-export default function HeaderBar() {
+interface HeaderBarProps {
+    selectView: (view: HomeView) => void;
+}
+
+export default function HeaderBar(props: HeaderBarProps) {
     const [state, setState] = useState({
         mobileView: false,
         drawerOpen: false,
@@ -42,7 +47,7 @@ export default function HeaderBar() {
         };
     }, []);
 
-    const displayDesktop = () => {
+    const displayDesktop = (selectView: (view: HomeView) => void) => {
         return (
             <Toolbar>
                 <Box sx={{ flexGrow: 1 }}>
@@ -52,7 +57,7 @@ export default function HeaderBar() {
                         color="secondary"
                         aria-label="home"
                         sx={{ mr: 2 }}
-                        href="#"
+                        onClick={() => selectView(HomeView.PRESENTATION)}
                     >
                         <HomeOutlinedIcon />
                     </IconButton>
@@ -60,19 +65,19 @@ export default function HeaderBar() {
                 <Stack direction="row" spacing={5} alignItems="center">
                     <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                         01.
-                        <Link className="custom-link" underline="none" onClick={() => { document.querySelector("#about")?.scrollIntoView({ behavior: 'smooth'}) }}>
+                        <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.ABOUT)}>
                             About
                         </Link>
                     </Typography>
                     <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                         02.
-                        <Link className="custom-link" underline="none" onClick={() => { document.querySelector("#experience")?.scrollIntoView({ behavior: 'smooth'}) }}>
+                        <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.EXPERIENCE)}>
                             Experience
                         </Link>
                     </Typography>
                     <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                         03.
-                        <Link className="custom-link" underline="none" onClick={() => { document.querySelector("#contact")?.scrollIntoView({ behavior: 'smooth'}) }}>
+                        <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.CONTACT)}>
                             Contact
                         </Link>
                     </Typography>
@@ -82,7 +87,7 @@ export default function HeaderBar() {
         );
     };
 
-    const displayMobile = () => {
+    const displayMobile = (selectView: (view: HomeView) => void) => {
         const handleDrawerOpen = () =>
             setState((prevState) => ({ ...prevState, drawerOpen: true }));
         const handleDrawerClose = () =>
@@ -97,6 +102,7 @@ export default function HeaderBar() {
                         color="secondary"
                         aria-label="home"
                         sx={{ mr: 2 }}
+                        onClick={() => selectView(HomeView.PRESENTATION)}
                     >
                         <HomeOutlinedIcon />
                     </IconButton>
@@ -129,30 +135,30 @@ export default function HeaderBar() {
                             <CloseIcon />
                         </IconButton>
                     </Box>
-                    <Box display="flex" style={{ backgroundColor: "rgba(0,0,0,0.7)", width: "70vw", height: "100vh", padding: "20px 30px" }}>{getDrawerChoices()}</Box>
+                    <Box display="flex" style={{ backgroundColor: "rgba(0,0,0,0.7)", width: "70vw", height: "100vh", padding: "20px 30px" }}>{getDrawerChoices(selectView)}</Box>
                 </Drawer>
             </Toolbar>
         );
     };
 
-    const getDrawerChoices = () => {
+    const getDrawerChoices = (selectView: (view: HomeView) => void) => {
         return (
             <Stack direction="column" spacing={1} justifyContent="space-evenly" alignItems="left">
-                <Typography variant="h6" color="secondary" sx={{ fontFamily: 'Monospace' }}>
+                <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                     01.
-                    <Link className="custom-link" underline="none">
+                    <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.ABOUT)}>
                         About
                     </Link>
                 </Typography>
-                <Typography variant="h6" color="secondary" sx={{ fontFamily: 'Monospace' }}>
+                <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                     02.
-                    <Link className="custom-link" underline="none">
+                    <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.EXPERIENCE)}>
                         Experience
                     </Link>
                 </Typography>
-                <Typography variant="h6" color="secondary" sx={{ fontFamily: 'Monospace' }}>
+                <Typography color="secondary" sx={{ fontFamily: 'Monospace' }}>
                     03.
-                    <Link className="custom-link" underline="none">
+                    <Link className="custom-link" underline="none" onClick={() => selectView(HomeView.CONTACT)}>
                         Contact
                     </Link>
                 </Typography>
@@ -165,7 +171,7 @@ export default function HeaderBar() {
         <Box sx={{ flexGrow: 1 }}>
             <HideOnScroll>
                 <AppBar style={{ background: 'rgba(0,0,0,0.3)', boxShadow: 'none' }} position="fixed">
-                    {mobileView ? displayMobile() : displayDesktop()}
+                    {mobileView ? displayMobile(props.selectView) : displayDesktop(props.selectView)}
                 </AppBar>
             </HideOnScroll>
         </Box>

@@ -1,4 +1,4 @@
-import { Box, Grid, Stack } from "@mui/material";
+import { Box, Collapse, Grid, Stack } from "@mui/material";
 import AboutCardText from "./AboutCardText";
 import CardTitle from "../CardTitle";
 import Technologies from "./Technologies";
@@ -12,8 +12,10 @@ export default function AboutCardContent() {
     });
 
     const { mobileView } = state;
+    const [checked, setChecked] = useState(false);
 
     useEffect(() => {
+        setChecked(true);
         const setResponsiveness = () => {
             return window.innerWidth < 900
                 ? setState((prevState) => ({ ...prevState, mobileView: true }))
@@ -30,7 +32,7 @@ export default function AboutCardContent() {
     }, []);
 
     return (
-        <>
+        <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
             <CardTitle number="01." title="About Me" />
             <Stack spacing={5} direction={mobileView ? "column" : "row"} alignItems="center">
                 <Stack direction="column">
@@ -42,6 +44,6 @@ export default function AboutCardContent() {
                 </Stack>
                 <ProfilePicture />
             </Stack>
-        </>
+        </Collapse>
     );
 }

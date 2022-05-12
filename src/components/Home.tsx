@@ -1,19 +1,35 @@
-import { Box, Collapse, Grid, Stack } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { Box, Stack } from '@mui/material';
+import { useState } from 'react';
 import Background from '../assets/img/background.png';
-import AboutCard from './About/AboutCard';
-import ButtonsBox from './Buttons/ButtonsBox';
-import ContactCard from './Contact/ContactCard';
-import ExperienceCard from './Experience/ExperienceCard';
+import AboutCardContent from './About/AboutCardContent';
+import ContactCardContent from './Contact/ContactCardContent';
+import CustomCard from './CustomCard';
+import ExperienceCardContent from './Experience/ExperienceCardContent';
 import HeaderBar from './HeaderBar';
-import PresentationCard from './Presentation/PresentationCard';
+import PresentationCardContent from './Presentation/PresentationCardContent';
+
+export enum HomeView {
+    PRESENTATION,
+    ABOUT,
+    EXPERIENCE,
+    CONTACT
+}
+
+function selectView(view: HomeView) {
+    switch (view) {
+        case HomeView.PRESENTATION:
+            return (<PresentationCardContent />);
+        case HomeView.ABOUT:
+            return (<AboutCardContent />);
+        case HomeView.EXPERIENCE:
+            return (<ExperienceCardContent />);
+        case HomeView.CONTACT:
+            return (<ContactCardContent />);
+    }
+}
 
 export default function Home() {
-    const [checked, setChecked] = useState(false);
-
-    useEffect(() => {
-        setChecked(true);
-    });
+    const [view, setView] = useState(HomeView.PRESENTATION);
 
     return (
         <Box
@@ -22,47 +38,18 @@ export default function Home() {
             style={{
                 backgroundImage: `url(${Background})`,
                 backgroundSize: "cover",
-                backgroundAttachment: "scroll"
+                height: "100vh"
             }}
             justifyContent="center">
             <Stack spacing={2} direction="column">
-                <HeaderBar />
-                {/* <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}> */}
+                <HeaderBar selectView={setView} />
                 <Box
                     sx={{ height: "100vh" }}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
                 >
-                    <PresentationCard />
-                    {/* </Collapse> */}
-                </Box>
-                <Box
-                    id="about"
-                    sx={{ height: "100vh" }}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                >
-                    <AboutCard />
-                </Box>
-                <Box
-                    id="experience"
-                    sx={{ height: "100vh" }}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                >
-                    <ExperienceCard />
-                </Box>
-                <Box
-                    id="contact"
-                    sx={{ height: "100vh" }}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                >
-                    <ContactCard />
+                    <CustomCard content={selectView(view)} />
                 </Box>
             </Stack>
         </Box>
