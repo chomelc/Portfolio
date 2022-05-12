@@ -1,6 +1,7 @@
 # :briefcase: Clémence Chomel's Portfolio
 
 :gear: *This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
+
 :bulb: *UI inspiration from [Brittany Chiang's portfolio](https://brittanychiang.com/).*
 
 ## Running the app in development
