@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import PP from '../../assets/img/avatar.jpg';
+import PP from '../../assets/img/linkedin-avatar.png';
 
 export default function ProfilePicture() {
     return (
@@ -9,7 +9,6 @@ export default function ProfilePicture() {
                 alt="Clémence Chomel"
                 src={PP}
                 sx={{ width: 256, height: 256, mb: 1.5 }}
-                style={{ color: 'red' }}
             />
         </div>
     );
