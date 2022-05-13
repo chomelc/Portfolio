@@ -1,4 +1,4 @@
-import { Button, Collapse, Stack, Tooltip } from "@mui/material";
+import { Box, Button, Collapse, Stack, Tooltip } from "@mui/material";
 import CardTitle from "../CardTitle";
 import LinkedInCard from "../LinkedInCard";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -34,36 +34,40 @@ export default function AboutCardContent() {
     return (
         <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
             <CardTitle number="04." title="Get In Touch" />
-            <Stack direction={mobileView ? "column" : "row"} spacing={2} alignItems="center" justifyContent="flex-start">
-                <LinkedInCard theme="dark" />
-                <Stack direction="column" spacing={2} alignItems="flex-start">
-                    <Tooltip title="Write an email">
-                        <Button
-                            size="large"
-                            startIcon={<MailOutlineIcon color="secondary" />}
-                            onClick={(e) => {
-                                window.location.href = "mailto:clemence.chomel@gmail.com";
-                                e.preventDefault();
-                            }}
-                        >
-                            clemence.chomel@gmail.com
-                        </Button>
-                    </Tooltip>
-                    <Tooltip title="Call phone number">
-                        <Button
-                            size="large"
-                            startIcon={<LocalPhoneIcon color="secondary" />}
-                            onClick={(e) => {
-                                window.location.href = "tel:(+33)695643477";
-                                e.preventDefault();
-                            }}
-                        >
-                            (+33)695643477
-                        </Button>
-                    </Tooltip>
-                    <ButtonsBox />
+            <Box
+                sx={{ p: 2, flexGrow: 1, background: 'rgba(0,0,0,0.5)', display: 'flex' }}
+            >
+                <Stack direction={mobileView ? "column" : "row"} spacing={2} alignItems="center" justifyContent="flex-start">
+                    {/* <LinkedInCard theme="dark" /> */}
+                    <Stack direction="column" spacing={2} alignItems="flex-start">
+                        <Tooltip title="Write an email">
+                            <Button
+                                size="large"
+                                startIcon={<MailOutlineIcon color="secondary" />}
+                                onClick={(e) => {
+                                    window.location.href = "mailto:clemence.chomel@gmail.com";
+                                    e.preventDefault();
+                                }}
+                            >
+                                clemence.chomel@gmail.com
+                            </Button>
+                        </Tooltip>
+                        <Tooltip title="Call phone number">
+                            <Button
+                                size="large"
+                                startIcon={<LocalPhoneIcon color="secondary" />}
+                                onClick={(e) => {
+                                    window.location.href = "tel:(+33)695643477";
+                                    e.preventDefault();
+                                }}
+                            >
+                                (+33)695643477
+                            </Button>
+                        </Tooltip>
+                        <ButtonsBox />
+                    </Stack>
                 </Stack>
-            </Stack>
-        </Collapse>
+            </Box>
+        </Collapse >
     );
 }

@@ -77,7 +77,7 @@ export default function ExperienceCardContent() {
     const displayDesktop = () => {
         return (
             <Box
-                sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex' }}
+                sx={{ flexGrow: 1, background: 'rgba(0,0,0,0.5)', display: 'flex' }}
             >
                 <ExperienceVerticalTabs value={value} handleChange={handleChange} />
                 <TabPanel value={value} index={0}>
