@@ -1,6 +1,6 @@
 import { Box, Stack } from '@mui/material';
 import { useState } from 'react';
-import Background from '../assets/img/background.png';
+import Background from '../assets/img/background.webp';
 import AboutCardContent from './About/AboutCardContent';
 import ContactCardContent from './Contact/ContactCardContent';
 import CustomCard from './CustomCard';
