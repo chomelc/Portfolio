@@ -11,7 +11,7 @@ export default function InternshipExperience() {
                 June 2019 - August 2019
             </Typography>
             <List >
-                <ListItem>
+                <ListItem alignItems="flex-start">
                     <ListItemIcon>
                         <PushPinIcon fontSize="small" color="secondary" />
                     </ListItemIcon>

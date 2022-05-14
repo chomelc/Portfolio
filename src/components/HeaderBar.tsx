@@ -1,4 +1,4 @@
-import { Box, Toolbar, Button, AppBar, IconButton, Typography, Link, Stack, Drawer, useScrollTrigger, Slide } from "@mui/material";
+import { Box, Toolbar, AppBar, IconButton, Typography, Link, Stack, Drawer, useScrollTrigger, Slide } from "@mui/material";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -180,12 +180,10 @@ export default function HeaderBar(props: HeaderBarProps) {
     };
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <HideOnScroll>
-                <AppBar style={{ background: 'rgba(0,0,0,0.3)', boxShadow: 'none' }} position="fixed">
-                    {mobileView ? displayMobile(props.selectView) : displayDesktop(props.selectView)}
-                </AppBar>
-            </HideOnScroll>
-        </Box>
+        <HideOnScroll>
+            <AppBar style={{ background: 'rgba(0,0,0,0.3)', boxShadow: 'none', width: "100vw" }} position="sticky">
+                {mobileView ? displayMobile(props.selectView) : displayDesktop(props.selectView)}
+            </AppBar>
+        </HideOnScroll>
     );
 }

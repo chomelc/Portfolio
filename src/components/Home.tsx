@@ -43,16 +43,10 @@ export default function Home() {
                 backgroundImage: `url(${Background})`,
                 backgroundSize: "cover",
                 height: "100vh"
-            }}
-            justifyContent="center">
-            <Stack spacing={2} direction="column">
+            }}>
+            <Stack spacing={2} direction="column" alignItems="center">
                 <HeaderBar selectView={setView} />
-                <Box
-                    sx={{ height: "100vh" }}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                >
+                <Box>
                     <CustomCard content={selectView(view)} />
                 </Box>
             </Stack>

@@ -1,4 +1,4 @@
-import { Typography, List, ListItem, ListItemIcon, ListItemText, Stack, Chip } from "@mui/material";
+import { Typography, List, ListItem, ListItemIcon, ListItemText, Stack, Chip, Grid } from "@mui/material";
 import PushPinIcon from '@mui/icons-material/PushPin';
 
 export default function ApprenticeshipExperience() {
@@ -11,7 +11,7 @@ export default function ApprenticeshipExperience() {
                 September 2019 - Today
             </Typography>
             <List>
-                <ListItem>
+                <ListItem alignItems="flex-start">
                     <ListItemIcon>
                         <PushPinIcon fontSize="small" color="secondary" />
                     </ListItemIcon>
@@ -19,7 +19,7 @@ export default function ApprenticeshipExperience() {
                         primary="Study of the users’ and other development teams’ needs in order to define the features to implement or maintain."
                     />
                 </ListItem>
-                <ListItem>
+                <ListItem alignItems="flex-start">
                     <ListItemIcon>
                         <PushPinIcon fontSize="small" color="secondary" />
                     </ListItemIcon>
@@ -27,17 +27,29 @@ export default function ApprenticeshipExperience() {
                         <ListItemText
                             primary="Implementation of new features for data treatment and the testing process."
                         />
-                        <Stack direction="row" spacing={1}>
-                            <Chip label="Java" color="primary" variant="outlined" />
-                            <Chip label="C++" color="primary" variant="outlined" />
-                            <Chip label="Javascript" color="primary" variant="outlined" />
-                            <Chip label="Typescript" color="primary" variant="outlined" />
-                            <Chip label="React" color="primary" variant="outlined" />
-                            <Chip label="SAP UI5" color="primary" variant="outlined" />
-                        </Stack>
+                        <Grid container direction="row" spacing={1} alignItems="center">
+                            <Grid item xs={6} md={4}>
+                                <Chip label="Java" color="primary" variant="outlined" />
+                            </Grid>
+                            <Grid item xs={6} md={4}>
+                                <Chip label="C++" color="primary" variant="outlined" />
+                            </Grid>
+                            <Grid item xs={6} md={4}>
+                                <Chip label="Javascript" color="primary" variant="outlined" />
+                            </Grid>
+                            <Grid item xs={6} md={4}>
+                                <Chip label="Typescript" color="primary" variant="outlined" />
+                            </Grid>
+                            <Grid item xs={6} md={4}>
+                                <Chip label="React" color="primary" variant="outlined" />
+                            </Grid>
+                            <Grid item xs={6} md={4}>
+                                <Chip label="SAP UI5" color="primary" variant="outlined" />
+                            </Grid>
+                        </Grid>
                     </Stack>
                 </ListItem>
-                <ListItem>
+                <ListItem alignItems="flex-start">
                     <ListItemIcon>
                         <PushPinIcon fontSize="small" color="secondary" />
                     </ListItemIcon>
@@ -45,7 +57,7 @@ export default function ApprenticeshipExperience() {
                         primary="Maintenance of already existing features: redesigned the test framework, corrected bugs."
                     />
                 </ListItem>
-                <ListItem>
+                <ListItem alignItems="flex-start">
                     <ListItemIcon>
                         <PushPinIcon fontSize="small" color="secondary" />
                     </ListItemIcon>
@@ -58,7 +70,7 @@ export default function ApprenticeshipExperience() {
                         </Stack>
                     </Stack>
                 </ListItem>
-                <ListItem>
+                <ListItem alignItems="flex-start">
                     <ListItemIcon>
                         <PushPinIcon fontSize="small" color="secondary" />
                     </ListItemIcon>
@@ -66,14 +78,20 @@ export default function ApprenticeshipExperience() {
                         <ListItemText
                             primary="Implementation of unit and integration tests for the developed features."
                         />
-                        <Stack direction="row" spacing={1}>
-                            <Chip label="JUnit" color="primary" variant="outlined" />
-                            <Chip label="CPPUnit" color="primary" variant="outlined" />
-                            <Chip label="React Testing Library" color="primary" variant="outlined" />
-                        </Stack>
+                        <Grid container direction="row" spacing={1} alignItems="center">
+                            <Grid item xs={6} md={4}>
+                                <Chip label="JUnit" color="primary" variant="outlined" />
+                            </Grid>
+                            <Grid item xs={6} md={4}>
+                                <Chip label="CPPUnit" color="primary" variant="outlined" />
+                            </Grid>
+                            <Grid item xs={12} md={4}>
+                                <Chip label="React Testing Library" color="primary" variant="outlined" />
+                            </Grid>
+                        </Grid>
                     </Stack>
                 </ListItem>
-                <ListItem>
+                <ListItem alignItems="flex-start">
                     <ListItemIcon>
                         <PushPinIcon fontSize="small" color="secondary" />
                     </ListItemIcon>
@@ -81,7 +99,7 @@ export default function ApprenticeshipExperience() {
                         primary="Active participation to the project monitoring."
                     />
                 </ListItem>
-                <ListItem>
+                <ListItem alignItems="flex-start">
                     <ListItemIcon>
                         <PushPinIcon fontSize="small" color="secondary" />
                     </ListItemIcon>

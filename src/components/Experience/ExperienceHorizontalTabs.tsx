@@ -12,7 +12,7 @@ function a11yProps(index: number) {
     };
 }
 
-export default function ExperienceVerticalTabs(props: ExperienceHorizontalTabsProps) {
+export default function ExperienceHorizontalTabs(props: ExperienceHorizontalTabsProps) {
     return (
         <Tabs
             value={props.value}

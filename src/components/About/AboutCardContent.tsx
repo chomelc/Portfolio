@@ -1,4 +1,4 @@
-import { Box, Collapse, Grid, Stack } from "@mui/material";
+import { Box, Collapse, Stack } from "@mui/material";
 import AboutCardText from "./AboutCardText";
 import CardTitle from "../CardTitle";
 import Technologies from "./Technologies";

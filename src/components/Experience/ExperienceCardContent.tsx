@@ -60,17 +60,17 @@ export default function ExperienceCardContent() {
 
     const displayMobile = () => {
         return (
-            <>
-                {/* TODO */}
-                Mobile Presentation of Work Experience
-                {/* <ExperienceHorizontalTabs value={value} handleChange={handleChange}/>
+            <Box
+                sx={{ flexGrow: 1, background: 'rgba(0,0,0,0.5)' }}
+            >
+                <ExperienceHorizontalTabs value={value} handleChange={handleChange} />
                 <TabPanel value={value} index={0}>
                     <ApprenticeshipExperience />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <InternshipExperience/>
-                </TabPanel> */}
-            </>
+                    <InternshipExperience />
+                </TabPanel>
+            </Box>
         );
     };
 
