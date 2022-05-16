@@ -35,7 +35,7 @@ const courses = [
         cross-platform apps. See how to use structures, templates, 
         change detection, data binding, and more.`,
         link: 'https://www.linkedin.com/learning/paths/become-an-angular-developer-2',
-        certificate: 'test',
+        certificate: '',
         subcourses: [
             {
                 title: 'Learning Angular',

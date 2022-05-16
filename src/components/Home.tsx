@@ -42,7 +42,7 @@ export default function Home() {
             style={{
                 backgroundImage: `url(${Background})`,
                 backgroundSize: "cover",
-                height: "100vh"
+                minHeight: "100vh"
             }}>
             <Stack spacing={2} direction="column" alignItems="center">
                 <HeaderBar selectView={setView} />
