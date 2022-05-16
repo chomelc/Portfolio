@@ -41,7 +41,8 @@ export default function Home() {
             sx={{ flexGrow: 1 }}
             style={{
                 backgroundImage: `url(${Background})`,
-                backgroundSize: "cover",
+                backgroundSize: 2000,
+                backgroundPosition: "0 0",
                 minHeight: "100vh"
             }}>
             <Stack spacing={2} direction="column" alignItems="center">
