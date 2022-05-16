@@ -69,7 +69,7 @@ export default function CourseCard(props: CourseCardProps) {
                                 <Typography variant="h5" sx={{ fontFamily: 'Nunito' }}>
                                     Subcourses
                                 </Typography>
-                                <Divider style={{ height: "1px", width: "70%", backgroundColor: "#D0D6C2" }} />
+                                <Divider style={{ height: "1px", width: "80%", backgroundColor: "#D0D6C2" }} />
                             </Stack>
                             <Grid container direction={props.mobileView ? "column" : "row"} spacing={2} alignItems="flex-start">
                                 {props.subcourses?.map((subcourse) => (
