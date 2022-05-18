@@ -29,6 +29,13 @@ const projects = [
         link: 'https://github.com/chomelc/WYE',
         technologies: ['Python', 'Flask', 'React', 'Typescript'],
     },
+    {
+        title: 'Spotistics',
+        description: 'A simple Angular application to visualize your Spotify statistics. ',
+        status: ProjectStatus.IN_PROGRESS,
+        link: 'https://github.com/chomelc/Spotistics',
+        technologies: ['Angular',  'Typescript', 'Angular Material'],
+    },
 ];
 
 const courses = [
