@@ -4,6 +4,11 @@ import CardTitle from "../CardTitle";
 import CourseCard from "./CourseCard";
 import ProjectCard from "./ProjectCard"
 
+export enum ProjectStatus {
+    IN_PROGRESS = 'Work In Progress',
+    COMPLETED = ''
+}
+
 export enum CourseStatus {
     IN_PROGRESS = 'In Progress',
     COMPLETED = 'Completed'
@@ -13,12 +18,14 @@ const projects = [
     {
         title: 'Portfolio',
         description: 'Personal portfolio built with React Typescript.',
+        status: ProjectStatus.COMPLETED,
         link: 'https://github.com/chomelc/Portfolio',
         technologies: ['React', 'Typescript', 'Material UI'],
     },
     {
-        title: 'What ya eatin\'?',
+        title: 'What ya eatin\'? - WYE',
         description: 'A simple webapp to organize and keep track of your weekly meals.',
+        status: ProjectStatus.IN_PROGRESS,
         link: 'https://github.com/chomelc/WYE',
         technologies: ['Python', 'Flask', 'React', 'Typescript'],
     },
@@ -105,6 +112,7 @@ export default function WorkCards() {
                         <ProjectCard
                             title={project.title}
                             description={project.description}
+                            status={project.status}
                             link={project.link}
                             technologies={project.technologies} />
                     </Grid>

@@ -1,10 +1,12 @@
 import { Card, CardContent, Typography, CardHeader, IconButton, Chip, Stack } from "@mui/material";
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { ProjectStatus } from "./WorkCardContent";
 
 interface ProjectCardProps {
     title: string;
     description: string;
+    status: string;
     link: string;
     technologies: string[];
 }
@@ -23,9 +25,12 @@ export default function ProjectCard(props: ProjectCardProps) {
                 }>
             </CardHeader>
             <CardContent>
-                <Typography variant="h5" sx={{ fontFamily: 'Nunito' }}>
-                    {props.title}
-                </Typography>
+                <Stack direction="row" spacing={1} alignItems="center">
+                    <Typography variant="h5" sx={{ fontFamily: 'Nunito' }}>
+                        {props.title}
+                    </Typography>
+                    {props.status === ProjectStatus.IN_PROGRESS ? <Chip size="small" label="WIP" color="secondary" variant="outlined" /> : undefined}
+                </Stack>
                 <Typography variant="subtitle1">
                     {props.description}
                 </Typography>
