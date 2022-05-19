@@ -34,14 +34,14 @@ const projects = [
         description: 'A simple Angular application to visualize your Spotify statistics. ',
         status: ProjectStatus.IN_PROGRESS,
         link: 'https://github.com/chomelc/Spotistics',
-        technologies: ['Angular',  'Typescript', 'Angular Material'],
+        technologies: ['Angular', 'Typescript', 'Node.js'],
     },
 ];
 
 const courses = [
     {
         title: 'Become an Angular Developer',
-        status: CourseStatus.IN_PROGRESS,
+        status: CourseStatus.COMPLETED,
         description: `
         Take your existing programming skills forward by learning how 
         to build robust web apps using the Angular framework. Learn how 
@@ -49,7 +49,7 @@ const courses = [
         cross-platform apps. See how to use structures, templates, 
         change detection, data binding, and more.`,
         link: 'https://www.linkedin.com/learning/paths/become-an-angular-developer-2',
-        certificate: '',
+        certificate: 'https://tinyurl.com/8zjswm5e',
         subcourses: [
             {
                 title: 'Learning Angular',
@@ -78,8 +78,8 @@ const courses = [
             },
             {
                 title: 'Angular: API Communication and Authentication',
-                status: CourseStatus.IN_PROGRESS,
-                certificate: ''
+                status: CourseStatus.COMPLETED,
+                certificate: 'https://www.linkedin.com/learning/certificates/d95209e1c54cf9d0bb762387af2b5f48ec41497af6621e75d19b1ca08d515f06?trk=share_certificate'
             },
         ],
     },
