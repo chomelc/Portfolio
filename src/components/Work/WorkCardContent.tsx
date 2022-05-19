@@ -73,8 +73,8 @@ const courses = [
             },
             {
                 title: 'Angular: Testing and Debugging',
-                status: CourseStatus.IN_PROGRESS,
-                certificate: ''
+                status: CourseStatus.COMPLETED,
+                certificate: 'https://www.linkedin.com/learning/certificates/6c46db6b6af95811beb80342c8132a7cb5c4eb1e9cca975ebeb79f54262308de'
             },
             {
                 title: 'Angular: API Communication and Authentication',
