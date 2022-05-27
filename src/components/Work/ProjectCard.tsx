@@ -10,13 +10,15 @@ import {
 } from "@mui/material";
 import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 import { ProjectStatus } from "./WorkCardContent";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   status: string;
-  link: string;
+  gh_link: string;
+  link: string | undefined;
   technologies: string[];
 }
 
@@ -36,16 +38,30 @@ export default function ProjectCard(props: ProjectCardProps) {
           <FolderOutlinedIcon color="secondary" style={{ fontSize: 35 }} />
         }
         action={
-          <Tooltip title="View on Github">
-            <IconButton
-              color="primary"
-              className="custom-link"
-              href={props.link}
-              target="_blank"
-            >
-              <GitHubIcon />
-            </IconButton>
-          </Tooltip>
+          <>
+            <Tooltip title="View on Github">
+              <IconButton
+                color="primary"
+                className="custom-link"
+                href={props.gh_link}
+                target="_blank"
+              >
+                <GitHubIcon />
+              </IconButton>
+            </Tooltip>
+            {props.link ? (
+              <Tooltip title="Visit application">
+                <IconButton
+                  color="primary"
+                  className="custom-link"
+                  href={props.link}
+                  target="_blank"
+                >
+                  <IosShareOutlinedIcon />
+                </IconButton>
+              </Tooltip>
+            ) : undefined}
+          </>
         }
       ></CardHeader>
       <CardContent>

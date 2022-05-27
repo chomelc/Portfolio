@@ -19,7 +19,8 @@ const projects = [
     title: "Portfolio",
     description: "Personal portfolio built with React Typescript.",
     status: ProjectStatus.COMPLETED,
-    link: "https://github.com/chomelc/Portfolio",
+    gh_link: "https://github.com/chomelc/Portfolio",
+    link: "https://chomelc.github.io/Portfolio/",
     technologies: ["React", "Typescript", "Material UI"],
   },
   {
@@ -27,7 +28,8 @@ const projects = [
     description:
       "A simple webapp to organize and keep track of your weekly meals.",
     status: ProjectStatus.IN_PROGRESS,
-    link: "https://github.com/chomelc/WYE",
+    gh_link: "https://github.com/chomelc/WYE",
+    link: "",
     technologies: ["Python", "Flask", "React", "Typescript"],
   },
   {
@@ -35,7 +37,8 @@ const projects = [
     description:
       "A simple Angular application to visualize your Spotify statistics. ",
     status: ProjectStatus.IN_PROGRESS,
-    link: "https://github.com/chomelc/Statify",
+    gh_link: "https://github.com/chomelc/Statify",
+    link: "https://appstatify.herokuapp.com/",
     technologies: ["Angular", "Typescript", "Node.js"],
   },
 ];
@@ -152,7 +155,8 @@ export default function WorkCards() {
               title={project.title}
               description={project.description}
               status={project.status}
-              link={project.link}
+              gh_link={project.gh_link}
+              link={project.link ? project.link : undefined}
               technologies={project.technologies}
             />
           </Grid>
