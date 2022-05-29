@@ -41,6 +41,15 @@ const projects = [
     link: "https://appstatify.herokuapp.com/",
     technologies: ["Angular", "Typescript", "Node.js"],
   },
+  {
+    title: "Look Up Bot",
+    description:
+      " A twitter bot that publishes daily near earth objects informations.",
+    status: ProjectStatus.COMPLETED,
+    gh_link: "https://github.com/chomelc/LookUp",
+    link: "https://twitter.com/lookupbot",
+    technologies: ["Python", "Docker", "NASA API", "Twitter Bot"],
+  },
 ];
 
 const courses = [
