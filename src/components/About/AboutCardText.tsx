@@ -1,18 +1,28 @@
 import { Typography } from "@mui/material";
 
 export default function AboutCardText() {
-    return (
-        <>
-            <Typography variant="h6" sx={{ mb: 1.5 }}>
-                As a former intern and now a <span style={{ color: "#FDB833" }}>full-stack software engineer</span>ing apprentice within SAP,
-                it is time for me to consider the beginning of my career as a graduated engineer.
-            </Typography>
-            <Typography variant="h6" sx={{ mb: 1.5 }}>
-                I am dynamic, conscientious and open, and I thrive in a paced work environment where teamwork is essential.
-                My experience has familiarized me with many of the challenges facing the software industry today and it has offered
-                me the opportunity to gain responsibility by working on a number of projects crucial to the company,
-                both on the <span style={{ color: "#FDB833" }}>front</span> and the <span style={{ color: "#FDB833" }}>back end</span>.
-            </Typography>
-        </>
-    );
+  return (
+    <>
+      <Typography variant="h6" sx={{ mb: 1.5 }}>
+        As a former intern, then apprentice and now a{" "}
+        <span style={{ color: "#FDB833" }}>full-stack software engineer</span>,
+        it is safe to say that I have been coding for quite some time.
+      </Typography>
+      <Typography variant="h6" sx={{ mb: 1.5 }}>
+        My experience within a{" "}
+        <a href="https://www.sap.com/france/index.html" target="_blank">
+          huge corporation
+        </a>{" "}
+        and a{" "}
+        <a href="https://www.dataiku.com/" target="_blank">
+          start-up
+        </a>{" "}
+        has familiarized me with many of the challenges facing the software
+        industry today and it has offered me the opportunity to gain
+        responsibility by working on a number of projects crucial to those
+        companies, both on the <span style={{ color: "#FDB833" }}>front</span>{" "}
+        and the <span style={{ color: "#FDB833" }}>back end</span>.
+      </Typography>
+    </>
+  );
 }

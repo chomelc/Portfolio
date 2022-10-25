@@ -13,14 +13,17 @@ import {
   FormControlLabel,
   Switch,
   Collapse,
+  SvgIcon,
 } from "@mui/material";
 import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import SubCourse, { SubCourseType } from "./SubCourse";
 import { useState } from "react";
+import { ReactComponent as DataikuIcon } from "../../assets/img/dataiku.svg";
 
 interface CourseCardProps {
+  platform: string;
   mobileView: boolean;
   title: string;
   status: string;
@@ -28,6 +31,19 @@ interface CourseCardProps {
   link?: string;
   certificate?: string;
   subcourses?: SubCourseType[];
+}
+
+function renderPlatformIcon(platform: string) {
+  switch (platform) {
+    case "linkedin":
+      return <LinkedInIcon color="secondary" style={{ fontSize: 35 }} />;
+    case "dataiku":
+      return (
+        <SvgIcon className="hackerrank-icon" color="secondary">
+          <DataikuIcon />
+        </SvgIcon>
+      );
+  }
 }
 
 export default function CourseCard(props: CourseCardProps) {
@@ -47,7 +63,7 @@ export default function CourseCard(props: CourseCardProps) {
       }}
     >
       <CardHeader
-        avatar={<LinkedInIcon color="secondary" style={{ fontSize: 35 }} />}
+        avatar={renderPlatformIcon(props.platform)}
         action={
           props.link ? (
             <Tooltip title="View Course">

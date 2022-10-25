@@ -54,6 +54,7 @@ const projects = [
 
 const courses = [
   {
+    platform: "linkedin",
     title: "Become an Angular Developer",
     status: CourseStatus.COMPLETED,
     description: `
@@ -104,6 +105,7 @@ const courses = [
     ],
   },
   {
+    platform: "linkedin",
     title: "Learning Scala",
     status: CourseStatus.COMPLETED,
     description: `
@@ -119,6 +121,34 @@ const courses = [
     link: "https://www.linkedin.com/learning/learning-scala-14639381",
     certificate:
       "https://www.linkedin.com/learning/certificates/680a09cd82ed55411241c1889c7cd0851e6bd6adaee99621dcd52c303529a341?trk=share_certificate",
+    subcourse: {},
+  },
+  {
+    platform: "dataiku",
+    title: "Dataiku Core Designer",
+    status: CourseStatus.COMPLETED,
+    description: `
+        You'll be able to understand the core concepts of Dataiku 
+        (project, Flow, datasets, etc.), build simple workflows within 
+        Dataiku with the visual tools, share your results via charts 
+        and dashboards, and learn best practices through the design of 
+        a Dataiku project - without the ML part.`,
+    link: "https://academy.dataiku.com/path/core-designer",
+    certificate: "https://verify.skilljar.com/c/7uqnx4gskbyi",
+    subcourse: {},
+  },
+  {
+    platform: "dataiku",
+    title: "Dataiku Advanced Designer",
+    status: CourseStatus.COMPLETED,
+    description: `
+        You'll be able to Create advanced data pipelines, optimize 
+        your flow with variables, partitions and reusable items, 
+        automate your data pipelines with the scenarios and 
+        implement rules with the metrics and checks, and learn about 
+        Dataiku extensibility with the plugins.`,
+    link: "https://academy.dataiku.com/path/advanced-designer",
+    certificate: "https://verify.skilljar.com/c/kyc2h8ydn5ts",
     subcourse: {},
   },
 ];
@@ -204,6 +234,7 @@ export default function WorkCards() {
         {courses.map((course) => (
           <Grid item xs={12} md={12}>
             <CourseCard
+              platform={course.platform}
               mobileView={mobileView}
               title={course.title}
               status={course.status}
