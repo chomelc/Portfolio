@@ -13,15 +13,13 @@ import PushPinIcon from "@mui/icons-material/PushPin";
 export default function ApprenticeshipExperience() {
   return (
     <>
-      <Typography variant="h6" sx={{ mb: 1.5 }}>
+      <Typography variant="h6" color="var(--white)" sx={{ mb: 1.5 }}>
         Full-Stack Software Engineer{" "}
-        <span style={{ color: "#FDB833" }}>@ Dataiku</span>
+        <a href="https://www.dataiku.com/" target="_blank">
+          @ Dataiku
+        </a>
       </Typography>
-      <Typography
-        variant="body2"
-        color="#BDC5AA"
-        sx={{ fontFamily: "Monospace" }}
-      >
+      <Typography variant="body2" sx={{ fontFamily: "Monospace" }}>
         September 2022 - Today
       </Typography>
       <List>

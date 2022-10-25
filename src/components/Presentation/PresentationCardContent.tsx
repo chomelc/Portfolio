@@ -18,20 +18,16 @@ export default function PresentationCardContent() {
       >
         Hi, my name is
       </Typography>
-      <Typography variant="h2" sx={{ fontFamily: "Nunito" }}>
-        Clémence Chomel.
+      <Typography variant="h2" color="var(--white)" fontWeight={900}>
+        Clémence Chomel
       </Typography>
-      <Typography
-        color="#BDC5AA"
-        variant="h4"
-        sx={{ mb: 1.5, fontFamily: "Nunito" }}
-      >
-        I'm a Software Engineer.
+      <Typography variant="h4" fontWeight={900} sx={{ mb: 1.5 }}>
+        I'm a full-stak software engineer.
       </Typography>
       <Typography variant="h6" sx={{ mb: 1.5 }}>
         I'm a software engineer looking to solve real-world problems. I'm
-        passionate about making open-source more accessible and creating
-        software and tools to help people.
+        passionate about making <mark>open-source</mark> more accessible and
+        creating software and tools to help people.
       </Typography>
       <ButtonsBox />
     </Collapse>

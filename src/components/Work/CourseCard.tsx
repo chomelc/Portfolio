@@ -21,6 +21,7 @@ import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import SubCourse, { SubCourseType } from "./SubCourse";
 import { useState } from "react";
 import { ReactComponent as DataikuIcon } from "../../assets/img/dataiku.svg";
+import { Platform } from "./WorkCardContent";
 
 interface CourseCardProps {
   platform: string;
@@ -35,9 +36,9 @@ interface CourseCardProps {
 
 function renderPlatformIcon(platform: string) {
   switch (platform) {
-    case "linkedin":
+    case Platform.LINKEDIN:
       return <LinkedInIcon color="secondary" style={{ fontSize: 35 }} />;
-    case "dataiku":
+    case Platform.DATAIKU:
       return (
         <SvgIcon className="hackerrank-icon" color="secondary">
           <DataikuIcon />
@@ -58,7 +59,7 @@ export default function CourseCard(props: CourseCardProps) {
       sx={{
         width: "100%",
         maxWidth: "90vw",
-        background: "rgba(0,0,0,0.7)",
+        background: "rgba(0,0,0,0.2)",
         boxShadow: "none",
       }}
     >
@@ -81,7 +82,7 @@ export default function CourseCard(props: CourseCardProps) {
       ></CardHeader>
       <CardContent>
         <Stack direction="row" spacing={1}>
-          <Typography variant="h5" sx={{ fontFamily: "Nunito" }}>
+          <Typography variant="h5" color="var(--white)">
             {props.title}
           </Typography>
           <Chip label={props.status} color="primary" variant="outlined" />
@@ -119,11 +120,7 @@ export default function CourseCard(props: CourseCardProps) {
                 />
               }
               label={
-                <Typography
-                  variant="body1"
-                  color="primary"
-                  sx={{ fontFamily: "Monospace" }}
-                >
+                <Typography variant="body1" color="var(--white)">
                   Show Subcourses
                 </Typography>
               }
@@ -137,14 +134,14 @@ export default function CourseCard(props: CourseCardProps) {
                 alignItems="center"
                 justifyContent="flex-start"
               >
-                <Typography variant="h5" sx={{ fontFamily: "Nunito" }}>
+                <Typography variant="h5" color="var(--white)">
                   Subcourses
                 </Typography>
                 <Divider
                   style={{
                     height: "1px",
                     width: "80%",
-                    backgroundColor: "#D0D6C2",
+                    backgroundColor: "var(--laurel-green)",
                   }}
                 />
               </Stack>

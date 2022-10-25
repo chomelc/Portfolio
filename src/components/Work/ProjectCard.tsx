@@ -29,7 +29,7 @@ export default function ProjectCard(props: ProjectCardProps) {
         width: 400,
         height: 250,
         maxWidth: "90vw",
-        background: "rgba(0,0,0,0.7)",
+        background: "rgba(0,0,0,0.2)",
         boxShadow: "none",
       }}
     >
@@ -66,7 +66,7 @@ export default function ProjectCard(props: ProjectCardProps) {
       ></CardHeader>
       <CardContent>
         <Stack direction="row" spacing={1} alignItems="center">
-          <Typography variant="h5" sx={{ fontFamily: "Nunito" }}>
+          <Typography variant="h5" color="var(--white)">
             {props.title}
           </Typography>
           {props.status === ProjectStatus.IN_PROGRESS ? (

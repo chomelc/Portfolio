@@ -61,7 +61,7 @@ export default function ExperienceCardContent() {
 
   const displayMobile = () => {
     return (
-      <Box sx={{ flexGrow: 1, background: "rgba(0,0,0,0.5)" }}>
+      <Box sx={{ flexGrow: 1 }}>
         <ExperienceHorizontalTabs value={value} handleChange={handleChange} />
         <TabPanel value={value} index={0}>
           <DataikuExperience />
@@ -78,7 +78,7 @@ export default function ExperienceCardContent() {
 
   const displayDesktop = () => {
     return (
-      <Box sx={{ flexGrow: 1, background: "rgba(0,0,0,0.5)", display: "flex" }}>
+      <Box sx={{ flexGrow: 1, display: "flex" }}>
         <ExperienceVerticalTabs value={value} handleChange={handleChange} />
         <TabPanel value={value} index={0}>
           <DataikuExperience />

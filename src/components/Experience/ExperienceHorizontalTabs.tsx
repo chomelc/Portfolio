@@ -35,7 +35,7 @@ export default function ExperienceHorizontalTabs(
       <Tab
         sx={{
           fontFamily: "Monospace",
-          color: "#D0D6C2",
+          color: "var(--laurel-green)",
           alignItems: "flex-end",
         }}
         label="Dataiku"
@@ -44,7 +44,7 @@ export default function ExperienceHorizontalTabs(
       <Tab
         sx={{
           fontFamily: "Monospace",
-          color: "#D0D6C2",
+          color: "var(--laurel-green)",
           alignItems: "flex-end",
         }}
         label="SAP - Apprentice"
@@ -53,7 +53,7 @@ export default function ExperienceHorizontalTabs(
       <Tab
         sx={{
           fontFamily: "Monospace",
-          color: "#D0D6C2",
+          color: "var(--laurel-green)",
           alignItems: "flex-end",
         }}
         label="SAP - Intern"
