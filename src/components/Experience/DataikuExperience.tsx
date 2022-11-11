@@ -30,13 +30,16 @@ export default function ApprenticeshipExperience() {
           <Stack direction="column" spacing={1}>
             <ListItemText primary="Working on the core product Dataiku DSS, on data presentation & visualization topics." />
             <Grid container direction="row" spacing={1} alignItems="center">
-              <Grid item xs={6} md={4}>
+              <Grid item xs={6} md={3}>
                 <Chip label="Java" color="primary" variant="outlined" />
               </Grid>
-              <Grid item xs={6} md={4}>
+              <Grid item xs={6} md={3}>
+                <Chip label="Python" color="primary" variant="outlined" />
+              </Grid>
+              <Grid item xs={6} md={3}>
                 <Chip label="Angular2+" color="primary" variant="outlined" />
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid item xs={6} md={3}>
                 <Chip label="AngularJS" color="primary" variant="outlined" />
               </Grid>
             </Grid>
