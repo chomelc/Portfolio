@@ -41,7 +41,7 @@ export default function ProjectCard(props: ProjectCardProps) {
           <>
             <Tooltip title="View on Github">
               <IconButton
-                color="primary"
+                sx={{ color: "var(--white)" }}
                 className="custom-link"
                 href={props.gh_link}
                 target="_blank"
@@ -52,7 +52,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             {props.link ? (
               <Tooltip title="Visit application">
                 <IconButton
-                  color="primary"
+                  sx={{ color: "var(--white)" }}
                   className="custom-link"
                   href={props.link}
                   target="_blank"

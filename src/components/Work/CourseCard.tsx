@@ -69,7 +69,7 @@ export default function CourseCard(props: CourseCardProps) {
           props.link ? (
             <Tooltip title="View Course">
               <IconButton
-                color="primary"
+                sx={{ color: "var(--white)" }}
                 className="custom-link"
                 href={props.link}
                 target="_blank"
