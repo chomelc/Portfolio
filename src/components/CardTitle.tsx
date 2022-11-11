@@ -15,8 +15,12 @@ export default function CardTitle(props: CardTitleProps) {
       >
         {props.number}
       </Typography>
-      <Typography variant="h4" color="var(--white)">
-        {props.title}
+      <Typography
+        variant="h4"
+        color="var(--white)"
+        sx={{ fontFamily: "Archivo Black" }}
+      >
+        {props.title.toUpperCase()}
       </Typography>
       {/* <Divider style={{ height: "1px", width: "5vw", backgroundColor: "#D0D6C2" }} /> */}
     </Stack>

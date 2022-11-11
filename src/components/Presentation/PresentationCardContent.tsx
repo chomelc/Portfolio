@@ -18,11 +18,20 @@ export default function PresentationCardContent() {
       >
         Hi, my name is
       </Typography>
-      <Typography variant="h2" color="var(--white)" fontWeight={900}>
-        Clémence Chomel
+      <Typography
+        variant="h3"
+        color="var(--white)"
+        fontWeight={900}
+        sx={{ fontFamily: "Archivo Black" }}
+      >
+        CLEMENCE CHOMEL
       </Typography>
-      <Typography variant="h4" fontWeight={900} sx={{ mb: 1.5 }}>
-        I'm a full-stak software engineer.
+      <Typography
+        variant="h4"
+        fontWeight={900}
+        sx={{ mb: 1.5, fontFamily: "Archivo Black" }}
+      >
+        I'M A FULL-STACK SOFTWARE ENGINEER.
       </Typography>
       <Typography variant="h6" sx={{ mb: 1.5 }}>
         I'm a software engineer looking to solve real-world problems. I'm

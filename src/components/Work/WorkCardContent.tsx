@@ -220,8 +220,12 @@ export default function WorkCards() {
                 backgroundColor: "var(--laurel-green)",
               }}
             />
-            <Typography variant="h5" color="var(--white)">
-              Courses
+            <Typography
+              variant="h5"
+              color="var(--white)"
+              sx={{ fontFamily: "Archivo Black" }}
+            >
+              COURSES
             </Typography>
             <Divider
               style={{

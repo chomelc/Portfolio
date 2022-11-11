@@ -21,7 +21,7 @@ const PortfolioTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Roboto", "Nunito", "sans-serif"].join(","),
+    fontFamily: ["Roboto", "Archivo Black", "sans-serif"].join(","),
     button: {
       textTransform: "none",
     },
