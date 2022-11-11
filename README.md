@@ -2,6 +2,8 @@
 
 :gear: _This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)._
 
+:sparkles: _Background particles generated with [particles.js](https://vincentgarreau.com/particles.js/)._
+
 :bulb: _UI inspiration from [Brittany Chiang's portfolio](https://brittanychiang.com/)._
 
 ## :gear: Running the app in development
