@@ -1,4 +1,4 @@
-import { Box, Collapse, Stack } from "@mui/material";
+import { Box, Card, CardContent, Collapse, Stack } from "@mui/material";
 import AboutCardText from "./AboutCardText";
 import CardTitle from "../CardTitle";
 import Technologies from "./Technologies";
@@ -6,44 +6,58 @@ import ProfilePicture from "./ProfilePicture";
 import { useEffect, useState } from "react";
 
 export default function AboutCardContent() {
-    const [state, setState] = useState({
-        mobileView: false,
-        drawerOpen: false,
-    });
+  const [state, setState] = useState({
+    mobileView: false,
+    drawerOpen: false,
+  });
 
-    const { mobileView } = state;
-    const [checked, setChecked] = useState(false);
+  const { mobileView } = state;
+  const [checked, setChecked] = useState(false);
 
-    useEffect(() => {
-        setChecked(true);
-        const setResponsiveness = () => {
-            return window.innerWidth < 900
-                ? setState((prevState) => ({ ...prevState, mobileView: true }))
-                : setState((prevState) => ({ ...prevState, mobileView: false }));
-        };
+  useEffect(() => {
+    setChecked(true);
+    const setResponsiveness = () => {
+      return window.innerWidth < 900
+        ? setState((prevState) => ({ ...prevState, mobileView: true }))
+        : setState((prevState) => ({ ...prevState, mobileView: false }));
+    };
 
-        setResponsiveness();
+    setResponsiveness();
 
-        window.addEventListener("resize", () => setResponsiveness());
+    window.addEventListener("resize", () => setResponsiveness());
 
-        return () => {
-            window.removeEventListener("resize", () => setResponsiveness());
-        };
-    }, []);
+    return () => {
+      window.removeEventListener("resize", () => setResponsiveness());
+    };
+  }, []);
 
-    return (
-        <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
-            <CardTitle number="01." title="About Me" />
-            <Stack spacing={5} direction={mobileView ? "column" : "row"} alignItems="center">
-                <Stack direction="column">
-                    <Box
-                        sx={{ maxWidth: "90vw" }}>
-                        <AboutCardText />
-                        <Technologies />
-                    </Box>
-                </Stack>
-                <ProfilePicture />
+  return (
+    <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
+      <CardTitle number="01." title="About Me" />
+      <Card
+        sx={{
+          width: "100%",
+          maxWidth: "90vw",
+          background: "rgba(0,0,0,0.2)",
+          boxShadow: "none",
+        }}
+      >
+        <CardContent>
+          <Stack
+            spacing={5}
+            direction={mobileView ? "column" : "row"}
+            alignItems="center"
+          >
+            <Stack direction="column">
+              <Box sx={{ maxWidth: "90vw" }}>
+                <AboutCardText />
+                <Technologies />
+              </Box>
             </Stack>
-        </Collapse>
-    );
+            <ProfilePicture />
+          </Stack>
+        </CardContent>
+      </Card>
+    </Collapse>
+  );
 }
